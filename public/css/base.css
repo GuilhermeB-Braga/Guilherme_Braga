@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+:root{
+    font-size: 62.5%;
+    --background-color: #E8E4E4;
+    --font-dark-color: #1E1E1E;
+    --font-light-color: #dfdfdf;
+    --accent-color-1: rgba(0, 0, 0, 0.993);
+    --accent-color-2: rgba(19, 94, 75, 0.993);
+    
+}
+
+body{
+    font-size: 1.6rem;
+    min-height: 100vh;
+    display: grid;
+    background-color: var(--background-color);
+    color: var(--font-dark-color);
+    grid-template-areas:
+    'header'
+    'main'
+    'footer'
+    ;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+}
+
+
+
+/* Header */
+
+header{
+    grid: header;
+    height: 8rem;
+    padding: 2rem 0;
+}
+
+header nav ul{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    display: inline-block;
+    padding: .5rem 1.4rem;
+    color: inherit;
+    transition: all .23s ease-in-out;
+    border-radius: 8px;
+}
+
+header nav ul li a:hover{
+    background-color: var(--font-dark-color);
+    color: var(--font-light-color);
+    
+}
+
+
+/* Main */
+
+main{
+    grid: main;
+    min-height: 100vh;
+}
+
+section{
+    padding: 0 9rem;
+}
+
+section#welcome,
+section#welcome .main-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 35vh;
+
+}
+
+section#welcome .title{
+    font-size: 6.4rem;
+    font-weight: 500;
+}
+
+section#welcome .subtile{
+    font-size: 4rem;
+    font-weight: 300;
+}
+
+section#about{
+    height: fit-content;
+    background-color: var(--font-dark-color);
+    color: var(--font-light-color);
+    padding: 6rem 20rem;
+    position: relative;
+}
+
+section#about .vertical-line{
+    height: 12rem;
+    width: .2rem;
+    background: linear-gradient(to bottom, white, rgb(65, 65, 65));
+    position: absolute;
+    left: 18rem;
+    border-radius: 6px;
+}
+
+.title2{
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+    color: inherit;
+}
+
+
+.paragraph{
+    line-height: 2.4rem;
+}
+
+
+section#projects{
+    min-height: 100vh;
+    padding: 6rem 14rem;
+}
+
+section#projects ul#projects-list{
+    list-style: none;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    cursor: pointer;
+}
+
+section#projects ul#projects-list .project{
+    background-color: var(--font-dark-color);
+    min-height: 40rem;
+    border-radius: 6px;
+    color: var(--font-light-color);
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.164);
+    position: relative;
+}
+
+section#projects ul#projects-list .project img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+section#projects ul#projects-list .project .description-wrapper{
+    padding: 1.4rem 2rem;
+}
+
+section#projects ul#projects-list .project .tags-wrapper ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.4rem 2rem;
+}
+
+section#projects ul#projects-list .project .tags-wrapper ul li{
+    padding: .2rem 1.4rem;
+    background: var(--background-color);
+    color: var(--font-dark-color);
+    border-radius: 4px;
+}
+
+section#projects ul#projects-list .project .controls-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.205);
+    backdrop-filter: blur(3px);
+    width: 100%;
+    border-radius: 8px;
+}
+
+section#projects ul#projects-list .project .controls-wrapper .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.4rem;
+    width: 100%;
+    transition: all .23s ease-in-out;
+}
+
+section#projects ul#projects-list .project .controls-wrapper .btn:hover{
+    background-color: #ffffff70;
+}
+
+
+
+
+/* Footer */
+
+footer{
+    grid: footer;
+    height: 8rem;
+    background-color: var(--font-dark-color);
+}
