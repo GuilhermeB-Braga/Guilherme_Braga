@@ -32,6 +32,29 @@ body{
 }
 
 
+/* Scrollbar */
+
+body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+    cursor: none;
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-track{
+    background: transparent;
+    padding: 2px;
+    
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #1d1d1d;
+    border-radius: 8px;
+    cursor: none;
+
+}
+
+
 
 /* Header */
 
@@ -131,78 +154,111 @@ section#projects{
     padding: 6rem 14rem;
 }
 
-section#projects ul#projects-list{
+#projects-list{
+    margin-top: 6rem;
     list-style: none;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.project-frame{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4rem;
+}
+
+.project-frame .content{
+    width: 55%;
+    position: relative;
+}
+
+.content .title-wrapper{
+    display: flex;
+    gap: 2rem;
     align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(auto, 1fr);
-    gap: 3rem;
+    margin-bottom: 2rem;
+
 }
 
-section#projects ul#projects-list .project{
-    background-color: var(--font-dark-color);
-    min-height: 40rem;
+.date{
+    display: flex;
+    align-items: center;
+    border: 1px solid #202020;
+    color: #202020;
     border-radius: 6px;
-    color: var(--font-light-color);
-    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.164);
+    padding: .25rem 1rem;
+    font-size: 1.4rem;
 }
 
-section#projects ul#projects-list .project img{
+.project-title{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #313131;
+}
+
+.project-paragraph{
+    color: #1d1d1d;
+    margin: 2rem 0;
+}
+
+.tecnologies-list{
+    margin-top: 2.6rem;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
-}
-
-section#projects ul#projects-list .project .description-wrapper{
-    padding: 1.4rem 2rem;
-}
-
-section#projects ul#projects-list .project .tags-wrapper ul{
-    list-style: none;
+    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-    padding: 1.4rem 2rem;
+    gap: 1.4rem;
 }
 
-section#projects ul#projects-list .project .tags-wrapper ul li{
-    padding: .2rem 1.4rem;
-    background: var(--background-color);
-    color: var(--font-dark-color);
-    border-radius: 4px;
+.tecnologies-list .tecnology{
+    width: fit-content;
+    padding: .3rem 1.5rem;
+    border-radius: 8px;
+    color: #303030;
+    background-color: rgba(8, 8, 8, 0.24);
 }
 
-section#projects ul#projects-list .project .controls-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.project-frame .project-image{
+    width: 45%;
+}
+
+.project-frame .project-image img{
+    aspect-ratio: 16/9;
+    object-fit: cover;
     width: 100%;
-    padding: .5rem;
-    gap: 1rem;
+    border-radius: 6px;
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.267);
 }
 
-section#projects ul#projects-list .project .controls-wrapper .btn{
+.buttons-wrapper{
+    margin-top: 3rem;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+}
+
+.buttons-wrapper a{
+    all: unset;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.4rem;
-    width: 100%;
+    gap: 2rem;
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: .5rem 1rem;
     transition: all .23s ease-in-out;
     cursor: pointer;
-    border-radius: 4px;
+    border: 1px solid #1d1d1d;
+    border-radius: 12px;
 }
 
-section#projects ul#projects-list .project .controls-wrapper .btn:hover{
-    background-color: #dfdfdf;
-    color: #1E1E1E;
-}
 
-section#contact{
-    min-height: 40vh;
-    background-color: #1E1E1E;
+.buttons-wrapper a:hover{
+    background-color: #1d1d1d;
+    color: #e0e0e0;
+    border-radius: 12px 12px 0 ;
 }
 
 
