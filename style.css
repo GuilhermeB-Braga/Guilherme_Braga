@@ -3,7 +3,7 @@
     padding: 0;
     scroll-behavior: smooth;
     box-sizing: border-box;
-    
+    -webkit-tap-highlight-color: transparent;
 }
 
 :root{
@@ -17,6 +17,7 @@
 }
 
 body{
+    width: 100%;
     font-size: 1.6rem;
     min-height: 100vh;
     display: grid;
@@ -106,6 +107,7 @@ section#welcome .main-title{
     align-items: center;
     flex-direction: column;
     height: 35vh;
+    gap: .4rem;
 
 }
 
@@ -114,9 +116,9 @@ section#welcome .title{
     font-weight: 500;
 }
 
-section#welcome .subtile{
-    font-size: 4rem;
-    font-weight: 300;
+section#welcome .subtitle{
+    font-size: 1.6rem;
+    font-weight: 400;
 }
 
 section#about{
@@ -157,23 +159,22 @@ section#projects{
 #projects-list{
     margin-top: 6rem;
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 4rem;
 }
 
 .project-frame{
     display: flex;
-    flex-direction: row-reverse;
-    gap: 4rem;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .project-frame .content{
-    width: 55%;
-    position: relative;
+    text-align: justify;
 }
 
-.content .title-wrapper{
+.project-frame .title-wrapper{
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -208,7 +209,7 @@ section#projects{
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.4rem;
+    gap: 1rem;
 }
 
 .tecnologies-list .tecnology{
@@ -220,7 +221,7 @@ section#projects{
 }
 
 .project-frame .project-image{
-    width: 45%;
+    width: 100%;
 }
 
 .project-frame .project-image img{
@@ -232,7 +233,7 @@ section#projects{
 }
 
 .buttons-wrapper{
-    margin-top: 3rem;
+    margin-top: 4rem;
     width: 100%;
     display: flex;
     gap: 2rem;
@@ -268,4 +269,50 @@ footer{
     grid: footer;
     height: 8rem;
     background-color: var(--font-dark-color);
+}
+
+/* Media Queries */
+
+@media (max-width:987px){
+
+    header nav ul{
+        gap: 1rem;
+    }
+
+    section{
+        padding: 0;
+    }
+
+    section#welcome,
+    section#welcome .main-title{
+        min-height: 35vh;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    section#welcome .title{
+        font-size: 3.6rem;
+        font-weight: 500;
+    }
+
+    section#welcome .subtitle{
+        font-size: 1.4rem;
+    }
+    
+    section#about{
+        padding: 3rem 4.2rem;
+    }
+
+    section#about .vertical-line{
+        left: 2.8rem;
+        border-radius: 6px;
+    }
+
+    section#projects{
+        padding: 3rem;
+    }
+
+    #projects-list{
+        grid-template-columns: repeat(1, auto);
+    }
 }
